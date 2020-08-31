@@ -30,7 +30,6 @@ public class BookCheckoutInitializer implements CommandLineRunner {
         bookRepository.save(book);
         publisherRepository.save(publisher);
         book.setPublisher(publisher);
-
         System.out.println(author);
         System.out.println(book);
         System.out.println(publisher);
