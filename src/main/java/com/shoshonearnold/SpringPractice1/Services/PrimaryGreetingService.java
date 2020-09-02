@@ -1,11 +1,13 @@
 package com.shoshonearnold.SpringPractice1.Services;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+@Primary
 @Service
-public class GreetingServiceImpl implements GreetingService {
+public class PrimaryGreetingService implements GreetingService{
     @Override
     public String sayGreeting() {
-        return "Hello Constructor";
+        return "Hello Primary";
     }
 }

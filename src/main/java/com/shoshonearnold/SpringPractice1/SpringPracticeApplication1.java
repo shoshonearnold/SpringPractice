@@ -1,9 +1,6 @@
 package com.shoshonearnold.SpringPractice1;
 
-import com.shoshonearnold.SpringPractice1.ContextControllers.ConstructorInjectedController;
-import com.shoshonearnold.SpringPractice1.ContextControllers.MyController;
-import com.shoshonearnold.SpringPractice1.ContextControllers.PropertyInjectedController;
-import com.shoshonearnold.SpringPractice1.ContextControllers.SetterInjectedController;
+import com.shoshonearnold.SpringPractice1.ContextControllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -12,6 +9,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class SpringPracticeApplication1 {
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(SpringPracticeApplication1.class, args);
+
+        I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+        String profilerGreeting = i18nController.sayHello();
+        System.out.println(profilerGreeting);
 
         MyController myController = (MyController)ctx.getBean("myController");
         String greeting = myController.sayHello();
